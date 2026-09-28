@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start dydaktyczny — Centrum Doskonałości Dydaktycznej ALK</title>
+<meta name="description" content="Interaktywny przewodnik dydaktyczny dla nauczycieli akademickich Akademii Leona Koźmińskiego.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!--
+  ŹRÓDŁO: „Start dydaktyczny II_v2.pptx” (28 slajdów).
+  Zgodnie z decyzją: usunięto harmonogram szkoleń (sl. 13–14), blended learning (sl. 15–16)
+  oraz wszystkie notatki prelegenta.
+  TODO (dla autorek/autorów) — zob. też README.md:
+   - sl. 21 i 22 były identyczne → treść pokazana raz (Sylabus › Punkt odniesienia).
+   - sl. 23 „Dobre praktyki 1/3” i sl. 24 „3/3” — brak części 2/3; treść scalona z sl. 25–27 w 7 zasad.
+   - informacja o AI (sl. 28) mówi o „prezentacji” — zachowano oryginalne brzmienie.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19L12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4.5M12 17.4v.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Przejdź do treści</a>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Otwórz menu sekcji">
+    <svg class="icon"><use href="#i-menu"/></svg>
+  </button>
+  <a class="topbar__brand" href="#start" aria-label="Start dydaktyczny — początek przewodnika">
+    <img class="topbar__logo" src="assets/logo-kozminski.png" alt="Akademia Leona Koźmińskiego — Kozminski University" width="600" height="261">
+    <span class="topbar__divider" aria-hidden="true"></span>
+    <span class="topbar__titles">
+      <span class="topbar__unit">Centrum Doskonałości Dydaktycznej</span>
+      <span class="topbar__title">Start dydaktyczny</span>
+    </span>
+  </a>
+  <div class="topbar__progress" aria-hidden="true">
+    <span class="topbar__progress-label">Postęp</span>
+    <span class="progress"><span class="progress__fill" data-progress-fill></span></span>
+    <span class="topbar__progress-value" data-progress-pct>0%</span>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar" aria-label="Nawigacja po przewodniku">
+    <nav aria-label="Sekcje przewodnika">
+      <ol class="nav">
+        <li class="nav__item" data-section="start">
+          <div class="nav__row">
+            <a class="nav__link" href="#start"><span class="nav__num">01</span><span class="nav__label">Start dydaktyczny</span><svg class="nav__done icon" aria-hidden="true"><use href="#i-check"/></svg></a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="sub-start"><span class="visually-hidden">Podsekcje: Start dydaktyczny</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          </div>
+          <ul class="nav__sub" id="sub-start">
+            <li><a href="#start-wprowadzenie">Wprowadzenie</a></li>
+            <li><a href="#start-mapa">Co znajdziesz w przewodniku</a></li>
+          </ul>
+        </li>
+        <li class="nav__item" data-section="wsparcie">
+          <div class="nav__row">
+            <a class="nav__link" href="#wsparcie"><span class="nav__num">02</span><span class="nav__label">Wsparcie dydaktyczne</span><svg class="nav__done icon" aria-hidden="true"><use href="#i-check"/></svg></a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="sub-wsparcie"><span class="visually-hidden">Podsekcje: Wsparcie dydaktyczne</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          </div>
+          <ul class="nav__sub" id="sub-wsparcie">
+            <li><a href="#wsparcie-szybko">Gdzie szukać wsparcia?</a></li>
+            <li><a href="#wsparcie-administracyjne">Sprawy administracyjne</a></li>
+            <li><a href="#wsparcie-metodyka">Metodyka i e-learning</a></li>
+            <li><a href="#wsparcie-techniczne">Wsparcie techniczne (JIRA)</a></li>
+          </ul>
+        </li>
+        <li class="nav__item" data-section="metody">
+          <div class="nav__row">
+            <a class="nav__link" href="#metody"><span class="nav__num">03</span><span class="nav__label">Metody dydaktyczne</span><svg class="nav__done icon" aria-hidden="true"><use href="#i-check"/></svg></a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="sub-metody"><span class="visually-hidden">Podsekcje: Metody dydaktyczne</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          </div>
+          <ul class="nav__sub" id="sub-metody">
+            <li><a href="#metody-klasyfikacja">Klasyfikacja metod</a></li>
+            <li><a href="#metody-mechanizmy">Mechanizmy dydaktyczne</a></li>
+            <li><a href="#metody-formy">Formy kształcenia</a></li>
+            <li><a href="#metody-efekty">Efekty uczenia się</a></li>
+            <li><a href="#metody-rama">Rama decyzyjna</a></li>
+          </ul>
+        </li>
+        <li class="nav__item" data-section="projektowanie">
+          <div class="nav__row">
+            <a class="nav__link" href="#projektowanie"><span class="nav__num">04</span><span class="nav__label">Projektowanie zajęć</span><svg class="nav__done icon" aria-hidden="true"><use href="#i-check"/></svg></a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="sub-projektowanie"><span class="visually-hidden">Podsekcje: Projektowanie zajęć</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          </div>
+          <ul class="nav__sub" id="sub-projektowanie">
+            <li><a href="#projektowanie-kroki">7 kroków projektowania</a></li>
+            <li><a href="#projektowanie-zasady">Zasady projektowania</a></li>
+            <li><a href="#projektowanie-efekty">Efekty dobrze zaprojektowanych zajęć</a></li>
+            <li><a href="#projektowanie-pytania">Pytania kontrolne</a></li>
+          </ul>
+        </li>
+        <li class="nav__item" data-section="sylabus">
+          <div class="nav__row">
+            <a class="nav__link" href="#sylabus"><span class="nav__num">05</span><span class="nav__label">Sylabus</span><svg class="nav__done icon" aria-hidden="true"><use href="#i-check"/></svg></a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="sub-sylabus"><span class="visually-hidden">Podsekcje: Sylabus</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          </div>
+          <ul class="nav__sub" id="sub-sylabus">
+            <li><a href="#sylabus-logowanie">Logowanie</a></li>
+            <li><a href="#sylabus-punkt">Punkt odniesienia</a></li>
+            <li><a href="#sylabus-praktyki">Dobre praktyki</a></li>
+            <li><a href="#sylabus-kontrola">Kontrola końcowa</a></li>
+          </ul>
+        </li>
+        <li class="nav__item" data-section="zakonczenie">
+          <div class="nav__row">
+            <a class="nav__link" href="#zakonczenie"><span class="nav__num">06</span><span class="nav__label">Na zakończenie</span><svg class="nav__done icon" aria-hidden="true"><use href="#i-check"/></svg></a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="sub-zakonczenie"><span class="visually-hidden">Podsekcje: Na zakończenie</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          </div>
+          <ul class="nav__sub" id="sub-zakonczenie">
+            <li><a href="#zakonczenie-zasady">Najważniejsze zasady</a></li>
+            <li><a href="#zakonczenie-kontakt">Kontakt z CDD</a></li>
+          </ul>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="sidebar__progress">
+      <p class="sidebar__progress-text"><span data-progress-count>0 z 6</span> sekcji przejrzanych</p>
+      <span class="progress progress--lg"><span class="progress__fill" data-progress-fill></span></span>
+      <button class="link-btn" type="button" data-progress-reset><svg class="icon" aria-hidden="true"><use href="#i-reset"/></svg>Wyzeruj postęp</button>
+    </div>
+  </aside>
+  <div class="scrim" data-scrim hidden></div>
+
+  <!-- ============ MAIN ============ -->
+  <main class="content" id="main" tabindex="-1">
+
+    <!-- ===================== 01 START ===================== -->
+    <section class="chapter" id="start" aria-labelledby="h-start" data-chapter>
+      <div class="hero" id="start-wprowadzenie">
+        <p class="eyebrow">Centrum Doskonałości Dydaktycznej</p>
+        <h1 id="h-start">Start dydaktyczny</h1>
+        <div class="hero__meta">
+          <p class="hero__authors">Patryk Gawor, dr Patrycja Lipińska, Paweł Zreda</p>
+          <p class="hero__team">Zespół Centrum Doskonałości Dydaktycznej</p>
+          <ul class="hero__contact">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:cdd@kozminski.edu.pl">cdd@kozminski.edu.pl</a></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>A.118</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub" id="start-mapa">
+        <h2 class="h3-like">Co znajdziesz w przewodniku</h2>
+        <p class="muted">Przewodnik jest podzielony na sekcje tematyczne. Możesz przechodzić przez nie po kolei albo wybrać interesujący Cię temat w panelu nawigacji (na telefonie — pod przyciskiem menu). Zaznaczenia na listach kontrolnych i postęp zapisują się w tej przeglądarce.</p>
+        <ol class="map">
+          <li><a class="map__card" href="#wsparcie"><span class="circle">02</span><span><strong>Wsparcie dydaktyczne</strong><span class="map__desc">Gdzie szukać wsparcia procesu dydaktycznego?</span></span></a></li>
+          <li><a class="map__card" href="#metody"><span class="circle">03</span><span><strong>Metody dydaktyczne</strong><span class="map__desc">Różne drogi, wspólny cel: skuteczne uczenie się</span></span></a></li>
+          <li><a class="map__card" href="#projektowanie"><span class="circle">04</span><span><strong>Projektowanie zajęć</strong><span class="map__desc">Siedem kroków projektowania zajęć</span></span></a></li>
+          <li><a class="map__card" href="#sylabus"><span class="circle">05</span><span><strong>Sylabus</strong><span class="map__desc">Jak poprawnie zaprojektować i wypełnić sylabus?</span></span></a></li>
+          <li><a class="map__card" href="#zakonczenie"><span class="circle">06</span><span><strong>Na zakończenie</strong><span class="map__desc">Najważniejsze zasady i kontakt z CDD</span></span></a></li>
+        </ol>
+      </div>
+      <div class="chapter-end" data-end="start" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== 02 WSPARCIE ===================== -->
+    <section class="chapter" id="wsparcie" aria-labelledby="h-wsparcie" data-chapter>
+      <header class="chapter__head">
+        <span class="circle circle--lg" aria-hidden="true">02</span>
+        <div>
+          <p class="eyebrow">Wsparcie dydaktyczne</p>
+          <h2 id="h-wsparcie">Gdzie szukać wsparcia procesu dydaktycznego?</h2>
+        </div>
+      </header>
+
+      <!-- sl. 5 -->
+      <div class="sub" id="wsparcie-szybko">
+        <h3>Jeśli potrzebujesz… skontaktuj się z…</h3>
+        <p class="lead">Skrócony indeks kontaktów. Wybierz potrzebę, aby przejść do pełnych danych kontaktowych.</p>
+        <ul class="finder">
+          <li><a class="finder__item" href="#unit-bod" data-open="unit-bod unit-kibs"><span class="finder__need">Sale, harmonogram, egzaminy, pensum</span><span class="finder__who"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Biuro Organizacji Dydaktyki / KIBS</span></a></li>
+          <li><a class="finder__item" href="#unit-dziekanaty" data-open="unit-dziekanaty"><span class="finder__need">Oceny, protokoły, sprawy studenckie</span><span class="finder__who"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Dziekanat</span></a></li>
+          <li><a class="finder__item" href="#unit-ceie" data-open="unit-ceie"><span class="finder__need">Blackboard, e-learning, egzaminy online</span><span class="finder__who"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>CEiE</span></a></li>
+          <li><a class="finder__item" href="#unit-cdd" data-open="unit-cdd"><span class="finder__need">Metodyka nauczania, AI, sylabusy, wsparcie dydaktyczne w prowadzeniu zajęć, szkolenia, rozwój kompetencji dydaktycznych</span><span class="finder__who"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>CDD</span></a></li>
+          <li><a class="finder__item" href="#unit-salesforce" data-open="unit-salesforce"><span class="finder__need">Problemy techniczne z sylabusami</span><span class="finder__who"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Salesforce</span></a></li>
+        </ul>
+        <p class="note">Pełne dane kontaktowe (e-maile i szczegółowy zakres wsparcia) znajdują się poniżej.</p>
+      </div>
+
+      <!-- sl. 3 -->
+      <div class="sub" id="wsparcie-administracyjne">
+        <h3>Sprawy administracyjne</h3>
+        <p class="lead">Sprawy administracyjne: sale, terminy, sylabusy i dziekanaty.</p>
+
+        <div class="acc-group">
+          <div class="acc unit" id="unit-bod">
+            <h4 class="acc__h">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-bod" id="b-bod">
+                <span class="unit__name">Biuro Organizacji Dydaktyki<span class="unit__sub">studia polskojęzyczne</span></span>
+                <svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+            </h4>
+            <p class="unit__mail"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:planowanie@kozminski.edu.pl">planowanie@kozminski.edu.pl</a></p>
+            <div class="acc__panel" id="p-bod" role="region" aria-labelledby="b-bod">
+              <p class="label">Zakres wsparcia</p>
+              <ul class="ticks">
+                <li>rezerwacja sal na zajęcia</li>
+                <li>terminy egzaminów</li>
+                <li>konsultacje na studiach polskojęzycznych</li>
+                <li>odwoływanie i odrabianie zajęć</li>
+                <li>rozbieżności między programem studiów a danymi w sylabusie (np. godziny konsultacji i efekty uczenia się)</li>
+                <li>rozliczanie pensum</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc unit" id="unit-kibs">
+            <h4 class="acc__h">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-kibs" id="b-kibs">
+                <span class="unit__name">Kozminski International Business School (KIBS)<span class="unit__sub">studia anglojęzyczne</span></span>
+                <svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+            </h4>
+            <p class="unit__mail"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:kibsplanowanie@kozminski.edu.pl">kibsplanowanie@kozminski.edu.pl</a></p>
+            <div class="acc__panel" id="p-kibs" role="region" aria-labelledby="b-kibs">
+              <p class="label">Zakres wsparcia</p>
+              <ul class="ticks">
+                <li>rezerwacja sal na zajęcia</li>
+                <li>terminy egzaminów</li>
+                <li>konsultacje na studiach anglojęzycznych</li>
+                <li>odwoływanie i odrabianie zajęć</li>
+                <li>rozbieżności między programem studiów a danymi w sylabusie (np. godziny konsultacji i efekty uczenia się)</li>
+                <li>rozliczanie pensum</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- W PPTX zakres wsparcia trzech dziekanatów to jedna scalona komórka tabeli. -->
+          <div class="acc unit" id="unit-dziekanaty">
+            <h4 class="acc__h">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-dziek" id="b-dziek">
+                <span class="unit__name">Dziekanaty<span class="unit__sub">3 jednostki · wspólny zakres wsparcia</span></span>
+                <svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+            </h4>
+            <ul class="deans">
+              <li><span>Dziekanat Kolegium Zarządzania oraz Kolegium Finansów i Ekonomii</span><a href="mailto:zif@kozminski.edu.pl"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>zif@kozminski.edu.pl</a></li>
+              <li><span>Dziekanat programów anglojęzycznych Kolegium Zarządzania oraz Kolegium Finansów i Ekonomii <em>wcześniej: Dziekanat KIBS</em></span><a href="mailto:studentoffice@kozminski.edu.pl"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>studentoffice@kozminski.edu.pl</a></li>
+              <li><span>Dziekanat Kolegium Prawa</span><a href="mailto:prawo@kozminski.edu.pl"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>prawo@kozminski.edu.pl</a></li>
+            </ul>
+            <div class="acc__panel" id="p-dziek" role="region" aria-labelledby="b-dziek">
+              <p class="label">Zakres wsparcia</p>
+              <ul class="ticks">
+                <li>sprawy dotyczące osób studiujących</li>
+                <li>oceny</li>
+                <li>protokoły</li>
+                <li>zaliczenia w dodatkowym terminie</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sl. 4 -->
+      <div class="sub" id="wsparcie-metodyka">
+        <h3>Metodyka, e-learning i wsparcie techniczne</h3>
+        <p class="lead">Metodyka, jakość dydaktyki oraz wsparcie e-learningowe i techniczne.</p>
+
+        <div class="acc-group">
+          <div class="acc unit" id="unit-ceie">
+            <h4 class="acc__h">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-ceie" id="b-ceie">
+                <span class="unit__name">Centrum Egzaminów i E-learningu (CEiE)</span>
+                <svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+            </h4>
+            <p class="unit__mail"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:egzaminy@kozminski.edu.pl">egzaminy@kozminski.edu.pl</a><span class="sep" aria-hidden="true">·</span><a href="mailto:e-learning@kozminski.edu.pl">e-learning@kozminski.edu.pl</a></p>
+            <div class="acc__panel" id="p-ceie" role="region" aria-labelledby="b-ceie">
+              <p class="label">Zakres wsparcia</p>
+              <ul class="ticks">
+                <li>wsparcie w przygotowaniu egzaminów elektronicznych</li>
+                <li>przeprowadzanie egzaminów elektronicznych</li>
+                <li>organizacja i obsługa egzaminów elektronicznych</li>
+                <li>platforma Blackboard i jej funkcjonowanie</li>
+                <li>produkcja materiałów e-learningowych</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc unit unit--cdd" id="unit-cdd">
+            <h4 class="acc__h">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-cdd" id="b-cdd">
+                <span class="unit__name">Centrum Doskonałości Dydaktycznej (CDD)</span>
+                <svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+            </h4>
+            <p class="unit__mail"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:cdd@kozminski.edu.pl">cdd@kozminski.edu.pl</a></p>
+            <div class="acc__panel" id="p-cdd" role="region" aria-labelledby="b-cdd">
+              <p class="label">Zakres wsparcia</p>
+              <ul class="ticks ticks--2col">
+                <li>jakość i rozwój dydaktyki</li>
+                <li>mentoring dydaktyczny</li>
+                <li>realne wsparcie w zakresie prowadzenia i projektowania zajęć</li>
+                <li>rozwój kompetencji dydaktycznych</li>
+                <li>szkolenia i konsultacje metodyczne</li>
+                <li>dobór metod dydaktycznych</li>
+                <li>dobór sposobów weryfikacji efektów uczenia się</li>
+                <li>wsparcie w przygotowaniu sylabusów</li>
+                <li>projektowanie kursów mieszanych, online, stacjonarnych</li>
+                <li>wykorzystanie AI i nowych technologii w dydaktyce</li>
+                <li>wsparcie metodyczne komponentów e-learningowych</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc unit" id="unit-salesforce">
+            <h4 class="acc__h">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-sf" id="b-sf">
+                <span class="unit__name">Zespół Salesforce</span>
+                <svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+            </h4>
+            <p class="unit__mail"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:salesforce@kozminski.edu.pl">salesforce@kozminski.edu.pl</a></p>
+            <div class="acc__panel" id="p-sf" role="region" aria-labelledby="b-sf">
+              <p class="label">Zakres wsparcia</p>
+              <ul class="ticks">
+                <li>problemy techniczne związane z sylabusami</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sl. 6 -->
+      <div class="sub" id="wsparcie-techniczne">
+        <h3>Gdzie szukać wsparcia technicznego?</h3>
+        <p class="lead">Problemy techniczne zgłaszaj w systemie JIRA (Helpdesk IT). Kompletne informacje ułatwiają identyfikację i obsługę sprawy.</p>
+
+        <div class="panel">
+          <div class="panel__tags"><span class="tag">JIRA</span><span class="tag">Helpdesk IT</span></div>
+          <ol class="steps-h">
+            <li><span class="circle">01</span><h4>Zaloguj się do JIRA</h4><p>Otwórz portal Helpdesk IT i wybierz kategorię najlepiej odpowiadającą problemowi.</p></li>
+            <li><span class="circle">02</span><h4>Opisz problem</h4><p>Podaj system, komunikat błędu, moment wystąpienia oraz wpływ problemu na prowadzenie zajęć.</p></li>
+            <li><span class="circle">03</span><h4>Dodaj materiały</h4><p>Dołącz zrzut ekranu i dane umożliwiające identyfikację sprawy, np. nazwę kursu lub grupy.</p></li>
+          </ol>
+          <a class="btn btn--primary" href="https://kozminski.atlassian.net/servicedesk/customer/user/login?destination=portals" target="_blank" rel="noopener">Otwórz portal<svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (otwiera się w nowej karcie)</span></a>
+        </div>
+
+        <h4 class="kicker">Co warto podać w zgłoszeniu?</h4>
+        <ul class="facts">
+          <li><strong>System lub urządzenie</strong><span>np. Blackboard, Salesforce, Teams</span></li>
+          <li><strong>Dokładny opis</strong><span>co nie działa i jaki komunikat się pojawia</span></li>
+          <li><strong>Kontekst</strong><span>nazwa kursu, grupa, sala i czas</span></li>
+          <li><strong>Załączniki</strong><span>zrzut ekranu bez danych wrażliwych</span></li>
+        </ul>
+
+        <div class="callout-row">
+          <aside class="callout">
+            <p class="callout__title">Problem z sylabusem?</p>
+            <p><strong>Koniecznie podaj numer sylabusa.</strong> Numer znajduje się na pierwszej stronie sylabusa, np. <code>S-00040128</code>.</p>
+          </aside>
+          <aside class="callout callout--alert">
+            <svg class="icon callout__icon" aria-hidden="true"><use href="#i-alert"/></svg>
+            <p>Pilne problemy podczas trwających zajęć opisz jednoznacznie w tytule zgłoszenia.</p>
+          </aside>
+        </div>
+      </div>
+      <div class="chapter-end" data-end="wsparcie" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== 03 METODY ===================== -->
+    <section class="chapter" id="metody" aria-labelledby="h-metody" data-chapter>
+      <header class="chapter__head">
+        <span class="circle circle--lg" aria-hidden="true">03</span>
+        <div>
+          <p class="eyebrow">Metody dydaktyczne</p>
+          <h2 id="h-metody">Słownik metod dydaktycznych</h2>
+        </div>
+      </header>
+
+      <!-- sl. 8 -->
+      <div class="sub" id="metody-klasyfikacja">
+        <p class="eyebrow eyebrow--sm">Klasyfikacja metod dydaktycznych</p>
+        <h3>Różne drogi, wspólny cel: skuteczne uczenie się</h3>
+        <p class="lead">Wybierz rodzinę metod, aby zobaczyć jej definicję i przykłady.</p>
+
+        <div class="tabs families" data-tabs id="families">
+          <div class="families__grid" role="tablist" aria-label="Rodziny metod dydaktycznych">
+            <button class="fam" role="tab" type="button" id="t-fam-1" aria-controls="fam-1" aria-selected="true"><span class="fam__num">1</span><span class="fam__name">Metody podające</span></button>
+            <button class="fam" role="tab" type="button" id="t-fam-2" aria-controls="fam-2" aria-selected="false"><span class="fam__num">2</span><span class="fam__name">Metody aktywizujące</span></button>
+            <button class="fam" role="tab" type="button" id="t-fam-3" aria-controls="fam-3" aria-selected="false"><span class="fam__num">3</span><span class="fam__name">Metody dialogowe</span></button>
+            <button class="fam" role="tab" type="button" id="t-fam-4" aria-controls="fam-4" aria-selected="false"><span class="fam__num">4</span><span class="fam__name">Metody współpracy</span></button>
+            <button class="fam" role="tab" type="button" id="t-fam-5" aria-controls="fam-5" aria-selected="false"><span class="fam__num">5</span><span class="fam__name">Metody praktyczne</span></button>
+            <button class="fam" role="tab" type="button" id="t-fam-6" aria-controls="fam-6" aria-selected="false"><span class="fam__num">6</span><span class="fam__name">Metody problemowe</span></button>
+            <button class="fam" role="tab" type="button" id="t-fam-7" aria-controls="fam-7" aria-selected="false"><span class="fam__num">7</span><span class="fam__name">Metody refleksyjne i metapoznawcze</span></button>
+          </div>
+
+          <div class="fam-panel" role="tabpanel" id="fam-1" aria-labelledby="t-fam-1" tabindex="0">
+            <p class="fam-panel__num">1 / 7</p>
+            <h4>Metody podające</h4>
+            <p class="fam-panel__def">Osoba prowadząca zajęcia jest głównym źródłem wiedzy. Przekazywanie gotowych treści w usystematyzowanej formie.</p>
+            <p class="label">Przykłady metod</p>
+            <ul class="chips"><li>wykład</li><li>wykład multimedialny</li><li>storytelling</li></ul>
+            <dl class="xref"><div><dt>Wiodące w formie</dt><dd>wykład</dd></div><div><dt>Rozwijają efekty</dt><dd>w zakresie wiedzy</dd></div></dl>
+          </div>
+          <div class="fam-panel" role="tabpanel" id="fam-2" aria-labelledby="t-fam-2" tabindex="0">
+            <p class="fam-panel__num">2 / 7</p>
+            <h4>Metody aktywizujące</h4>
+            <p class="fam-panel__def">Osoba prowadząca aktywnie angażuje osoby studiujące w rozwiązywanie problemów.</p>
+            <p class="label">Przykłady metod</p>
+            <ul class="chips"><li>burza mózgów</li><li>metoda przypadków (case study)</li><li>gry dydaktyczne</li><li>odgrywanie ról</li></ul>
+            <dl class="xref"><div><dt>Wspierające w formie</dt><dd>wykład</dd></div><div><dt>Rozwijają efekty</dt><dd>w zakresie wiedzy</dd></div></dl>
+          </div>
+          <div class="fam-panel" role="tabpanel" id="fam-3" aria-labelledby="t-fam-3" tabindex="0">
+            <p class="fam-panel__num">3 / 7</p>
+            <h4>Metody dialogowe</h4>
+            <p class="fam-panel__def">Prowadzący i osoby studiujące uczą się przez dialog i wymianę myśli; nauczyciel moderuje rozmowę, stymuluje myślenie i refleksję.</p>
+            <p class="label">Przykłady metod</p>
+            <ul class="chips"><li>dyskusja</li><li>pytania sokratejskie</li><li>dialog dydaktyczny</li><li>debata</li></ul>
+            <dl class="xref"><div><dt>Wiodące w formie</dt><dd>konwersatorium, seminarium, konsultacje</dd></div><div><dt>Rozwijają efekty</dt><dd>w zakresie kompetencji społecznych</dd></div></dl>
+          </div>
+          <div class="fam-panel" role="tabpanel" id="fam-4" aria-labelledby="t-fam-4" tabindex="0">
+            <p class="fam-panel__num">4 / 7</p>
+            <h4>Metody współpracy</h4>
+            <p class="fam-panel__def">Osoby studiujące pracują razem, dzielą się odpowiedzialnością i wspólnie dążą do osiągnięcia celu.</p>
+            <p class="label">Przykłady metod</p>
+            <ul class="chips"><li>praca w grupach</li><li>metoda jigsaw</li><li>projekt zespołowy</li><li>stacje zadaniowe</li></ul>
+            <dl class="xref"><div><dt>Wiodące w formie</dt><dd>konwersatorium, seminarium, konsultacje</dd></div><div><dt>Rozwijają efekty</dt><dd>w zakresie kompetencji społecznych</dd></div></dl>
+          </div>
+          <div class="fam-panel" role="tabpanel" id="fam-5" aria-labelledby="t-fam-5" tabindex="0">
+            <p class="fam-panel__num">5 / 7</p>
+            <h4>Metody praktyczne</h4>
+            <p class="fam-panel__def">Uczenie się przez działanie i praktyczne zastosowanie wiedzy w sytuacjach rzeczywistych lub symulowanych.</p>
+            <p class="label">Przykłady metod</p>
+            <ul class="chips"><li>eksperyment</li><li>symulacja</li><li>warsztaty</li></ul>
+            <dl class="xref"><div><dt>Wiodące w formie</dt><dd>ćwiczenia, laboratorium</dd></div><div><dt>Rozwijają efekty</dt><dd>w zakresie umiejętności</dd></div></dl>
+          </div>
+          <div class="fam-panel" role="tabpanel" id="fam-6" aria-labelledby="t-fam-6" tabindex="0">
+            <p class="fam-panel__num">6 / 7</p>
+            <h4>Metody problemowe</h4>
+            <p class="fam-panel__def">Uczenie się przez rozwiązywanie problemów i podejmowanie decyzji; rozwój myślenia krytycznego i samodzielności.</p>
+            <p class="label">Przykłady metod</p>
+            <ul class="chips"><li>metoda problemowa</li><li>problem-based learning (PBL)</li><li>analiza przypadku</li></ul>
+            <dl class="xref"><div><dt>Wiodące w formie</dt><dd>ćwiczenia, laboratorium</dd></div><div><dt>Rozwijają efekty</dt><dd>w zakresie umiejętności</dd></div></dl>
+          </div>
+          <div class="fam-panel" role="tabpanel" id="fam-7" aria-labelledby="t-fam-7" tabindex="0">
+            <p class="fam-panel__num">7 / 7</p>
+            <h4>Metody refleksyjne i metapoznawcze</h4>
+            <p class="fam-panel__def">Refleksja nad procesem uczenia się oraz rozwijanie świadomości własnych strategii i sposobów myślenia.</p>
+            <p class="label">Przykłady metod</p>
+            <ul class="chips"><li>dziennik refleksji</li><li>samoocena</li><li>portfolio</li></ul>
+            <dl class="xref"><div><dt>Wspierające w formach</dt><dd>wykład, ćwiczenia, laboratorium, konwersatorium, seminarium, konsultacje</dd></div></dl>
+          </div>
+        </div>
+
+        <div class="essence">
+          <p class="essence__label">Istota</p>
+          <p class="essence__title">Uczenie się</p>
+          <p class="essence__text">aktywne, świadome i ukierunkowane na rozwój kompetencji</p>
+        </div>
+        <p class="source">Źródło: opracowanie własne na podstawie Słownika metod dydaktycznych, CDD, 2026</p>
+      </div>
+
+      <!-- sl. 9 -->
+      <div class="sub" id="metody-mechanizmy">
+        <p class="eyebrow eyebrow--sm">Klasyfikacja metod dydaktycznych</p>
+        <h3>Główne mechanizmy dydaktyczne</h3>
+        <p class="lead">Osoby studiujące są aktywne podczas zajęć, a aktywność przejawia się m.in. rozwiązywaniem problemów, współpracą, dyskusją, refleksją i myśleniem krytycznym.</p>
+
+        <ol class="chain">
+          <li><span class="chain__num">01</span><h4>Motywacja</h4><p>Pobudzanie ciekawości i zaangażowania osób studiujących.</p></li>
+          <li><span class="chain__num">02</span><h4>Aktywność</h4><p>Włączanie osób studiujących w proces uczenia się przez działanie.</p></li>
+          <li><span class="chain__num">03</span><h4>Interakcja</h4><p>Wymiana myśli, dialog i współdziałanie z innymi.</p></li>
+          <li><span class="chain__num">04</span><h4>Konstruowanie wiedzy</h4><p>Budowanie wiedzy na podstawie doświadczeń i wcześniejszej wiedzy.</p></li>
+          <li><span class="chain__num">05</span><h4>Refleksja</h4><p>Analiza własnych działań i wniosków, rozwój świadomości uczenia się.</p></li>
+          <li><span class="chain__num">06</span><h4>Zastosowanie</h4><p>Przenoszenie wiedzy i umiejętności do nowych, praktycznych sytuacji.</p></li>
+        </ol>
+
+        <div class="effect">
+          <p class="effect__label">Efekt</p>
+          <ul class="chips chips--light"><li>trwałe uczenie się</li><li>rozwój kompetencji</li><li>samodzielność</li><li>krytyczne myślenie</li><li>gotowość do działania</li></ul>
+        </div>
+        <p class="source">Źródło: opracowanie własne na podstawie Słownika metod dydaktycznych, CDD, 2026</p>
+      </div>
+
+      <!-- sl. 10 -->
+      <div class="sub" id="metody-formy">
+        <p class="eyebrow eyebrow--sm">Formy kształcenia</p>
+        <h3>Metody wiodące i wspierające w formach kształcenia</h3>
+        <p class="lead">Dobór metod zależy od celów kształcenia, charakteru treści oraz sposobu organizacji zajęć.</p>
+
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Formy kształcenia">
+            <button role="tab" type="button" id="t-form-1" aria-controls="form-1" aria-selected="true">Wykład</button>
+            <button role="tab" type="button" id="t-form-2" aria-controls="form-2" aria-selected="false">Ćwiczenia</button>
+            <button role="tab" type="button" id="t-form-3" aria-controls="form-3" aria-selected="false">Laboratorium</button>
+            <button role="tab" type="button" id="t-form-4" aria-controls="form-4" aria-selected="false">Konwersatorium, seminarium, konsultacje</button>
+            <button role="tab" type="button" id="t-form-5" aria-controls="form-5" aria-selected="false">Komponent e-learningowy</button>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="form-1" aria-labelledby="t-form-1" tabindex="0">
+            <h4 class="visually-hidden">Wykład</h4>
+            <div class="lead-support">
+              <div class="ls ls--lead"><p class="ls__label">Wiodące</p><p class="ls__val">metody podające</p></div>
+              <div class="ls"><p class="ls__label">Wspierające</p><p class="ls__val">metody aktywizujące: problemowe, dialogowe, współpracy, praktyczne, refleksyjne i metapoznawcze</p></div>
+            </div>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="form-2" aria-labelledby="t-form-2" tabindex="0">
+            <h4 class="visually-hidden">Ćwiczenia</h4>
+            <div class="lead-support">
+              <div class="ls ls--lead"><p class="ls__label">Wiodące</p><p class="ls__val">metody praktyczne · metody problemowe</p></div>
+              <div class="ls"><p class="ls__label">Wspierające</p><p class="ls__val">metody dialogowe · podające · współpracy · refleksyjne i metapoznawcze</p></div>
+            </div>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="form-3" aria-labelledby="t-form-3" tabindex="0">
+            <h4 class="visually-hidden">Laboratorium</h4>
+            <div class="lead-support">
+              <div class="ls ls--lead"><p class="ls__label">Wiodące</p><p class="ls__val">metody praktyczne · metody problemowe</p></div>
+              <div class="ls"><p class="ls__label">Wspierające</p><p class="ls__val">metody dialogowe · podające · współpracy · refleksyjne i metapoznawcze</p></div>
+            </div>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="form-4" aria-labelledby="t-form-4" tabindex="0">
+            <h4 class="visually-hidden">Konwersatorium, seminarium, konsultacje</h4>
+            <div class="lead-support">
+              <div class="ls ls--lead"><p class="ls__label">Wiodące</p><p class="ls__val">metody dialogowe · metody współpracy</p></div>
+              <div class="ls"><p class="ls__label">Wspierające</p><p class="ls__val">metody praktyczne · problemowe · podające · refleksyjne i metapoznawcze</p></div>
+            </div>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="form-5" aria-labelledby="t-form-5" tabindex="0">
+            <h4 class="visually-hidden">Komponent e-learningowy</h4>
+            <div class="lead-support lead-support--single">
+              <div class="ls ls--lead"><p class="ls__label">Komponent e-learningowy</p><p class="ls__val">kombinacja metod dedykowanych pozostałym formom kształcenia, realizowana w środowisku mieszanym (blended learning)</p></div>
+            </div>
+          </div>
+        </div>
+
+        <blockquote class="principle">
+          <p>Nie ma jednej najlepszej metody — skuteczność zależy od świadomego doboru i łączenia metod oraz dopasowania ich do efektów uczenia się.</p>
+        </blockquote>
+        <p class="effects-line"><span class="label">Efekty:</span> skuteczne uczenie się · rozwój kompetencji · samodzielność i krytyczne myślenie · gotowość do działania</p>
+        <p class="source">Źródło: opracowanie własne na podstawie Słownika metod dydaktycznych, CDD, 2026</p>
+      </div>
+
+      <!-- sl. 11 -->
+      <div class="sub" id="metody-efekty">
+        <p class="eyebrow eyebrow--sm">Powiązania</p>
+        <h3>Efekty uczenia się a dobór metod</h3>
+        <p class="lead">Każdej kategorii efektów uczenia się odpowiadają metody, które najskuteczniej je rozwijają.</p>
+
+        <div class="outcomes">
+          <div class="outcome">
+            <h4 class="outcome__head">Efekty w zakresie wiedzy</h4>
+            <svg class="icon outcome__arrow" aria-hidden="true"><use href="#i-down"/></svg>
+            <ul class="outcome__methods">
+              <li><a href="#metody-klasyfikacja" data-select-tab="t-fam-1">Metody podające</a></li>
+              <li><a href="#metody-klasyfikacja" data-select-tab="t-fam-2">Metody aktywizujące</a></li>
+            </ul>
+          </div>
+          <div class="outcome">
+            <h4 class="outcome__head">Efekty w zakresie umiejętności</h4>
+            <svg class="icon outcome__arrow" aria-hidden="true"><use href="#i-down"/></svg>
+            <ul class="outcome__methods">
+              <li><a href="#metody-klasyfikacja" data-select-tab="t-fam-5">Metody praktyczne</a></li>
+              <li><a href="#metody-klasyfikacja" data-select-tab="t-fam-6">Metody problemowe</a></li>
+            </ul>
+          </div>
+          <div class="outcome">
+            <h4 class="outcome__head">Efekty w zakresie kompetencji społecznych</h4>
+            <svg class="icon outcome__arrow" aria-hidden="true"><use href="#i-down"/></svg>
+            <ul class="outcome__methods">
+              <li><a href="#metody-klasyfikacja" data-select-tab="t-fam-4">Metody współpracy</a></li>
+              <li><a href="#metody-klasyfikacja" data-select-tab="t-fam-3">Metody dialogowe</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="hint">Kliknij nazwę metody, aby zobaczyć jej definicję w słowniku.</p>
+
+        <blockquote class="principle">
+          <p>Skuteczne planowanie zajęć zaczyna się od efektów uczenia się — to one wyznaczają, które metody powinny pełnić rolę wiodącą.</p>
+        </blockquote>
+
+        <!-- Łańcuch zbudowany z zasady „Spójność” (sl. 18) — w PPTX nie ma go jako osobnego schematu. -->
+        <figure class="flow">
+          <figcaption class="flow__caption">Zasada spójności</figcaption>
+          <ol class="flow__steps">
+            <li><span>Cel i efekty uczenia się</span></li>
+            <li><span>Metody</span></li>
+            <li><span>Aktywności</span></li>
+            <li><span>Ocenianie</span></li>
+          </ol>
+          <p class="flow__text">Zadbaj o zgodność między celem, metodami, aktywnościami i ocenianiem. <a href="#projektowanie-zasady">Zobacz zasady projektowania</a></p>
+        </figure>
+      </div>
+
+      <!-- sl. 12 -->
+      <div class="sub" id="metody-rama">
+        <p class="eyebrow eyebrow--sm">Rama decyzyjna</p>
+        <h3>Od czego zależy dobór metod dydaktycznych</h3>
+        <p class="lead">Skuteczne nauczanie opiera się na świadomym doborze metod dopasowanych do celów, formy zajęć i grupy osób studiujących.</p>
+
+        <div class="frame">
+          <div class="frame__factors acc-group">
+            <div class="acc factor">
+              <h4 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-f1" id="b-f1"><span class="circle circle--sm">01</span><span class="factor__name">Efekty uczenia się</span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h4>
+              <div class="acc__panel" id="p-f1" role="region" aria-labelledby="b-f1"><p class="factor__detail">wiedza · umiejętności · kompetencje społeczne</p><p class="factor__link"><a href="#metody-efekty">Efekty uczenia się a dobór metod</a></p></div>
+            </div>
+            <div class="acc factor">
+              <h4 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-f2" id="b-f2"><span class="circle circle--sm">02</span><span class="factor__name">Forma zajęć</span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h4>
+              <div class="acc__panel" id="p-f2" role="region" aria-labelledby="b-f2"><p class="factor__detail">wykład · ćwiczenia · laboratorium · seminarium · konsultacje · konwersatorium</p><p class="factor__link"><a href="#metody-formy">Metody wiodące i wspierające w formach kształcenia</a></p></div>
+            </div>
+            <div class="acc factor">
+              <h4 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-f3" id="b-f3"><span class="circle circle--sm">03</span><span class="factor__name">Charakterystyka grupy</span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h4>
+              <div class="acc__panel" id="p-f3" role="region" aria-labelledby="b-f3"><p class="factor__detail">liczebność · poziom · doświadczenie</p></div>
+            </div>
+            <div class="acc factor">
+              <h4 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-f4" id="b-f4"><span class="circle circle--sm">04</span><span class="factor__name">Organizacja zajęć</span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h4>
+              <div class="acc__panel" id="p-f4" role="region" aria-labelledby="b-f4"><p class="factor__detail">czas · zasoby · przestrzeń</p></div>
+            </div>
+            <div class="acc factor">
+              <h4 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-f5" id="b-f5"><span class="circle circle--sm">05</span><span class="factor__name">Model kształcenia</span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h4>
+              <div class="acc__panel" id="p-f5" role="region" aria-labelledby="b-f5"><p class="factor__detail">stacjonarne · online · blended learning</p></div>
+            </div>
+          </div>
+
+          <aside class="frame__rule">
+            <p class="frame__rule-label">Zasada</p>
+            <p class="frame__rule-title">Nie istnieje jedna uniwersalna metoda dydaktyczna.</p>
+            <p>Skuteczne projektowanie zajęć polega na świadomym doborze i łączeniu metod — odpowiednio do efektów uczenia się, formy zajęć, charakterystyki grupy oraz warunków realizacji.</p>
+          </aside>
+        </div>
+      </div>
+      <div class="chapter-end" data-end="metody" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== 04 PROJEKTOWANIE ===================== -->
+    <section class="chapter" id="projektowanie" aria-labelledby="h-proj" data-chapter>
+      <header class="chapter__head">
+        <span class="circle circle--lg" aria-hidden="true">04</span>
+        <div>
+          <p class="eyebrow">Projektowanie zajęć</p>
+          <h2 id="h-proj">Siedem kroków projektowania zajęć</h2>
+        </div>
+      </header>
+
+      <!-- sl. 17 -->
+      <div class="sub" id="projektowanie-kroki">
+        <p class="lead lead--first">Dobre zajęcia nie dzieją się przypadkiem — są zaprojektowane z myślą o osobach studiujących, ich potrzebach i zakładanych efektach.</p>
+
+        <div class="tabs steps" data-tabs data-tabs-nav>
+          <div class="steps__bar">
+            <div class="steps__list" role="tablist" aria-label="Kroki projektowania zajęć">
+              <button role="tab" type="button" id="t-step-1" aria-controls="step-1" aria-selected="true"><span class="steps__n">01</span><span class="steps__t">Określ cele i efekty uczenia się</span></button>
+              <button role="tab" type="button" id="t-step-2" aria-controls="step-2" aria-selected="false"><span class="steps__n">02</span><span class="steps__t">Przeanalizuj kontekst</span></button>
+              <button role="tab" type="button" id="t-step-3" aria-controls="step-3" aria-selected="false"><span class="steps__n">03</span><span class="steps__t">Zaprojektuj aktywności</span></button>
+              <button role="tab" type="button" id="t-step-4" aria-controls="step-4" aria-selected="false"><span class="steps__n">04</span><span class="steps__t">Dobierz metody, materiały i narzędzia</span></button>
+              <button role="tab" type="button" id="t-step-5" aria-controls="step-5" aria-selected="false"><span class="steps__n">05</span><span class="steps__t">Zaplanuj ocenianie</span></button>
+              <button role="tab" type="button" id="t-step-6" aria-controls="step-6" aria-selected="false"><span class="steps__n">06</span><span class="steps__t">Zaplanuj przebieg zajęć</span></button>
+              <button role="tab" type="button" id="t-step-7" aria-controls="step-7" aria-selected="false"><span class="steps__n">07</span><span class="steps__t">Realizuj i monitoruj</span></button>
+            </div>
+          </div>
+
+          <div class="steps__body">
+            <div class="steps__panels">
+              <div class="step-panel" role="tabpanel" id="step-1" aria-labelledby="t-step-1" tabindex="0"><p class="step-panel__n">Krok 01 z 07</p><h4>Określ cele i efekty uczenia się</h4><p>Ustal, co osoby studiujące powinny wiedzieć, rozumieć i potrafić po zajęciach.</p></div>
+              <div class="step-panel" role="tabpanel" id="step-2" aria-labelledby="t-step-2" tabindex="0"><p class="step-panel__n">Krok 02 z 07</p><h4>Przeanalizuj kontekst</h4><p>Poznaj potrzeby, poziom przygotowania i oczekiwania grupy oraz uwarunkowania realizacji zajęć.</p></div>
+              <div class="step-panel" role="tabpanel" id="step-3" aria-labelledby="t-step-3" tabindex="0"><p class="step-panel__n">Krok 03 z 07</p><h4>Zaprojektuj aktywności</h4><p>Dobierz metody i formy pracy adekwatne do celów i sprzyjające aktywnemu uczeniu się.</p></div>
+              <div class="step-panel" role="tabpanel" id="step-4" aria-labelledby="t-step-4" tabindex="0"><p class="step-panel__n">Krok 04 z 07</p><h4>Dobierz metody, materiały i narzędzia</h4><p>Wybierz metody, materiały i narzędzia (w tym cyfrowe) wspierające realizację zajęć.</p></div>
+              <div class="step-panel" role="tabpanel" id="step-5" aria-labelledby="t-step-5" tabindex="0"><p class="step-panel__n">Krok 05 z 07</p><h4>Zaplanuj ocenianie</h4><p>Zaprojektuj sposoby sprawdzania efektów uczenia się oraz kryteria oceniania.</p></div>
+              <div class="step-panel" role="tabpanel" id="step-6" aria-labelledby="t-step-6" tabindex="0"><p class="step-panel__n">Krok 06 z 07</p><h4>Zaplanuj przebieg zajęć</h4><p>Ustal strukturę zajęć, rozkład czasu i kolejność aktywności.</p></div>
+              <div class="step-panel" role="tabpanel" id="step-7" aria-labelledby="t-step-7" tabindex="0"><p class="step-panel__n">Krok 07 z 07</p><h4>Realizuj i monitoruj</h4><p>Monitoruj przebieg zajęć, reaguj na potrzeby i wspieraj osoby studiujące.</p></div>
+              <div class="steps__nav">
+                <button class="btn btn--ghost" type="button" data-tabs-prev>← Poprzedni krok</button>
+                <button class="btn btn--ghost" type="button" data-tabs-next>Następny krok →</button>
+              </div>
+            </div>
+            <div class="center-badge" aria-label="W centrum: uczenie się — zaangażowanie, motywacja, rozwój">
+              <p class="center-badge__label">W centrum</p>
+              <p class="center-badge__title">Uczenie się</p>
+              <p class="center-badge__text">zaangażowanie · motywacja · rozwój</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sl. 18 -->
+      <div class="sub" id="projektowanie-zasady">
+        <p class="eyebrow eyebrow--sm">Zasady, efekty i pytania kontrolne</p>
+        <h3>Zasady projektowania</h3>
+        <ol class="principles">
+          <li><span class="circle circle--sm">01</span><div><h4>Zacznij od celu</h4><p>Określ, czego osoby studiujące mają się nauczyć i jakie kompetencje rozwinąć.</p></div></li>
+          <li><span class="circle circle--sm">02</span><div><h4>Osoba studiująca w centrum</h4><p>Uwzględnij potrzeby, doświadczenia i różnorodność grupy.</p></div></li>
+          <li><span class="circle circle--sm">03</span><div><h4>Spójność</h4><p>Zadbaj o zgodność między celem, metodami, aktywnościami i ocenianiem.</p></div></li>
+          <li><span class="circle circle--sm">04</span><div><h4>Aktywność i interakcja</h4><p>Projektuj zajęcia angażujące, sprzyjające współpracy i wymianie doświadczeń.</p></div></li>
+          <li><span class="circle circle--sm">05</span><div><h4>Informacja zwrotna</h4><p>Zapewnij regularną, konstruktywną informację zwrotną wspierającą rozwój.</p></div></li>
+          <li><span class="circle circle--sm">06</span><div><h4>Elastyczność</h4><p>Dostosuj formy pracy do kontekstu, możliwości i tempa uczenia się.</p></div></li>
+        </ol>
+      </div>
+
+      <div class="sub" id="projektowanie-efekty">
+        <h3>Efekty dobrze zaprojektowanych zajęć</h3>
+        <ul class="outcome-cards">
+          <li><h4>Lepsze efekty uczenia się</h4><p>Zajęcia prowadzą do osiągania zamierzonych efektów.</p></li>
+          <li><h4>Zaangażowanie i motywacja</h4><p>Osoby studiujące są aktywne i widzą sens swojej pracy.</p></li>
+          <li><h4>Jakość i spójność</h4><p>Zajęcia są przemyślane, spójne i profesjonalnie prowadzone.</p></li>
+          <li><h4>Ciągłe doskonalenie</h4><p>Regularna refleksja i ewaluacja rozwijają jakość dydaktyki.</p></li>
+        </ul>
+        <blockquote class="quote">
+          <p>Dobrze zaprojektowane zajęcia pomagają osobom studiującym osiągać cele, rozwijać kompetencje i budować trwałą wiedzę.</p>
+        </blockquote>
+      </div>
+
+      <div class="sub" id="projektowanie-pytania">
+        <h3>Pytania kontrolne na etapie projektowania</h3>
+        <p class="lead">Zaznacz pytania, na które masz już odpowiedź w swoim projekcie zajęć.</p>
+        <div class="checklist-box">
+          <div class="checklist-box__head">
+            <p class="checklist-box__count" aria-live="polite"><span data-checklist-count="projekt">0 / 6</span> pytań</p>
+            <button class="link-btn" type="button" data-checklist-reset="projekt"><svg class="icon" aria-hidden="true"><use href="#i-reset"/></svg>Wyczyść</button>
+          </div>
+          <span class="progress"><span class="progress__fill" data-checklist-fill="projekt"></span></span>
+          <ul class="checklist" data-checklist="projekt">
+            <li><input type="checkbox" id="q1"><label for="q1">Czego chcę, aby osoby studiujące się nauczyły?</label></li>
+            <li><input type="checkbox" id="q2"><label for="q2">Kim są i czego potrzebują?</label></li>
+            <li><input type="checkbox" id="q3"><label for="q3">Jakie aktywności najlepiej pomogą osiągnąć cele?</label></li>
+            <li><input type="checkbox" id="q4"><label for="q4">Jakie narzędzia i materiały będą pomocne?</label></li>
+            <li><input type="checkbox" id="q5"><label for="q5">Jak sprawdzę, że cele zostały osiągnięte?</label></li>
+            <li><input type="checkbox" id="q6"><label for="q6">Jak będę wspierać rozwój i motywację podczas zajęć?</label></li>
+          </ul>
+        </div>
+      </div>
+      <div class="chapter-end" data-end="projektowanie" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== 05 SYLABUS ===================== -->
+    <section class="chapter" id="sylabus" aria-labelledby="h-syl" data-chapter>
+      <header class="chapter__head">
+        <span class="circle circle--lg" aria-hidden="true">05</span>
+        <div>
+          <p class="eyebrow">Sylabus</p>
+          <h2 id="h-syl">Jak poprawnie zaprojektować i wypełnić sylabus?</h2>
+          <p class="chapter__sub">Dobre praktyki</p>
+        </div>
+      </header>
+
+      <!-- sl. 20 -->
+      <div class="sub" id="sylabus-logowanie">
+        <p class="eyebrow eyebrow--sm">Sylabus — logowanie</p>
+        <h3>Logowanie do systemu Salesforce</h3>
+        <p class="lead">Dostęp do przypisanych sylabusów przez portal MY Kozminski.</p>
+
+        <div class="login">
+          <ol class="login__steps">
+            <li><button class="login__step" type="button" data-spot="1" aria-pressed="false"><span class="circle circle--sm">01</span><span><strong>Zaloguj się</strong><span>Wejdź na <span class="nowrap">my.kozminski.edu.pl</span> i zaloguj się danymi ALK.</span></span></button></li>
+            <li><button class="login__step" type="button" data-spot="2" aria-pressed="false"><span class="circle circle--sm">02</span><span><strong>Otwórz Katalog aplikacji</strong><span>W menu po lewej stronie wybierz „Katalog aplikacji”.</span></span></button></li>
+            <li><button class="login__step" type="button" data-spot="3" aria-pressed="false"><span class="circle circle--sm">03</span><span><strong>Wybierz kafelek „Sylabus”</strong><span>Nastąpi przekierowanie do Salesforce i listy przypisanych sylabusów.</span></span></button></li>
+          </ol>
+          <figure class="shot">
+            <div class="shot__frame">
+              <div class="shot__url" aria-hidden="true">my.kozminski.edu.pl</div>
+              <div class="shot__img">
+                <img src="assets/sylabus-logowanie.png" width="517" height="360" alt="Zrzut ekranu portalu MY Kozminski: w menu po lewej zaznaczono pozycję „Katalog aplikacji”, a w sekcji Aplikacje zaznaczono kafelek „Sylabus — Aplikacja dla wykładowcy”.">
+                <span class="shot__spot shot__spot--1" data-spot-target="1" aria-hidden="true"></span>
+                <span class="shot__spot shot__spot--2" data-spot-target="2" aria-hidden="true"><span>02</span></span>
+                <span class="shot__spot shot__spot--3" data-spot-target="3" aria-hidden="true"><span>03</span></span>
+              </div>
+            </div>
+            <figcaption>Kliknij krok, aby zobaczyć, gdzie go wykonać.</figcaption>
+          </figure>
+        </div>
+        <a class="btn btn--primary" href="https://my.kozminski.edu.pl/" target="_blank" rel="noopener">my.kozminski.edu.pl<svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (otwiera się w nowej karcie)</span></a>
+      </div>
+
+      <!-- sl. 21 (= sl. 22, duplikat) -->
+      <div class="sub" id="sylabus-punkt">
+        <p class="eyebrow eyebrow--sm">Sylabus — punkt odniesienia</p>
+        <h3>Zanim zaczniesz wypełniać sylabus</h3>
+        <p class="lead">Najpierw zapoznaj się z programem studiów kierunku, na którym prowadzone będą zajęcia.</p>
+        <ol class="cards-3">
+          <li><span class="circle circle--sm">01</span><h4>Ustal właściwy program</h4><p>Sprawdź kierunek i tryb studiów, rok akademicki sylabusa oraz semestr realizacji zajęć. Program dobieramy według roku rozpoczęcia studiów przez daną grupę.</p></li>
+          <li><span class="circle circle--sm">02</span><h4>Określ miejsce przedmiotu</h4><p>Program pokazuje miejsce przedmiotu w procesie kształcenia, zakładane efekty oraz przypisany nakład pracy.</p></li>
+          <li><span class="circle circle--sm">03</span><h4>Zadbaj o ciągłość</h4><p>Zweryfikuj, jakie treści grupa już realizowała. Unikaj powielania zagadnień i uwzględnij wiedzę oraz umiejętności wejściowe.</p></li>
+        </ol>
+        <div class="path">
+          <p class="path__label">Punkt odniesienia</p>
+          <ol class="path__crumbs">
+            <li>BIP ALK</li>
+            <li>Programy studiów</li>
+            <li>rok akademicki odpowiadający naborowi grupy</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- sl. 23–27 scalone -->
+      <div class="sub" id="sylabus-praktyki">
+        <p class="eyebrow eyebrow--sm">Dobre praktyki — sylabus</p>
+        <h3>Jak przygotować użyteczny i spójny sylabus?</h3>
+        <p class="lead">Siedem zasad wspierających przejrzystość, spójność i jakość dokumentacji dydaktycznej. Przy każdej zasadzie sprawdź, który z dwóch zapisów jest lepszy.</p>
+
+        <div class="toolbar"><button class="link-btn" type="button" data-acc-all="praktyki" aria-expanded="false">Rozwiń wszystkie zasady</button></div>
+
+        <div class="practice-group" data-acc-scope="praktyki">
+          <div class="practice-group__head">
+            <h4 class="practice-group__title">Jasny i inkluzywny sylabus</h4>
+            <p>Sylabus powinien być inkluzywny, zrozumiały i użyteczny od pierwszego kontaktu z kursem. Cztery zasady dotyczące języka, spójności, perspektywy odbiorców i realnego nakładu pracy.</p>
+          </div>
+
+          <div class="acc practice">
+            <h5 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-pr1" id="b-pr1"><span class="circle circle--sm">01</span><span class="practice__title">Używaj języka inkluzywnego<span class="practice__short">Stosuj neutralne określenia i zachowaj tę samą terminologię w całym sylabusie.</span></span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h5>
+            <div class="acc__panel" id="p-pr1" role="region" aria-labelledby="b-pr1">
+              <p class="practice__more"><strong>Język inkluzywny.</strong> Stosuj neutralne określenia: „osoby studiujące”, „osoby prowadzące zajęcia”, „osoby uczące się”. Unikaj form, które niepotrzebnie zawężają grupę odbiorców.</p>
+              <div class="compare" data-compare>
+                <p class="compare__q">Który zapis jest lepszy?</p>
+                <div class="compare__opts">
+                  <button class="compare__opt" type="button" data-correct="false"><span class="compare__tag compare__tag--bad"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Źle</span><span class="compare__text">Student powinien przygotować projekt i przedstawić go prowadzącemu.</span></button>
+                  <button class="compare__opt" type="button" data-correct="true"><span class="compare__tag compare__tag--good"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dobrze</span><span class="compare__text">Osoby studiujące przygotowują projekt i prezentują go osobie prowadzącej zajęcia.</span></button>
+                </div>
+                <p class="compare__fb" aria-live="polite"></p>
+                <button class="link-btn compare__reveal" type="button">Pokaż odpowiedź</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc practice">
+            <h5 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-pr2" id="b-pr2"><span class="circle circle--sm">02</span><span class="practice__title">Projektuj sylabus jako całość<span class="practice__short">Cele, efekty, treści, metody i ocenianie powinny tworzyć spójny system.</span></span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h5>
+            <div class="acc__panel" id="p-pr2" role="region" aria-labelledby="b-pr2">
+              <div class="compare" data-compare>
+                <p class="compare__q">Który zapis jest lepszy?</p>
+                <div class="compare__opts">
+                  <button class="compare__opt" type="button" data-correct="true"><span class="compare__tag compare__tag--good"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dobrze</span><span class="compare__text">Efekt: «analizuje dane»; zajęcia: analiza przypadków; ocena: zadanie analityczne.</span></button>
+                  <button class="compare__opt" type="button" data-correct="false"><span class="compare__tag compare__tag--bad"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Źle</span><span class="compare__text">Efekt dotyczy analizy, zajęcia są wyłącznie wykładowe, a zaliczenie to test pamięciowy.</span></button>
+                </div>
+                <p class="compare__fb" aria-live="polite"></p>
+                <button class="link-btn compare__reveal" type="button">Pokaż odpowiedź</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc practice">
+            <h5 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-pr3" id="b-pr3"><span class="circle circle--sm">03</span><span class="practice__title">Pisz z perspektywy osób studiujących<span class="practice__short">Pisz jasno, czego osoby studiujące się nauczą i jakie działania wykonają.</span></span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h5>
+            <div class="acc__panel" id="p-pr3" role="region" aria-labelledby="b-pr3">
+              <p class="practice__more"><strong>Jasny komunikat.</strong> Opisuj, czego osoby studiujące się nauczą, jakie aktywności wykonają i czego mogą oczekiwać podczas kursu. Ogranicz formalne i nieprecyzyjne sformułowania.</p>
+              <div class="compare" data-compare>
+                <p class="compare__q">Który zapis jest lepszy?</p>
+                <div class="compare__opts">
+                  <button class="compare__opt" type="button" data-correct="false"><span class="compare__tag compare__tag--bad"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Źle</span><span class="compare__text">Realizacja zagadnień obejmujących problematykę współczesnych metod zarządzania.</span></button>
+                  <button class="compare__opt" type="button" data-correct="true"><span class="compare__tag compare__tag--good"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dobrze</span><span class="compare__text">Podczas zajęć osoby studiujące poznają metody zarządzania i uczą się dobierać je do sytuacji.</span></button>
+                </div>
+                <p class="compare__fb" aria-live="polite"></p>
+                <button class="link-btn compare__reveal" type="button">Pokaż odpowiedź</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc practice">
+            <h5 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-pr4" id="b-pr4"><span class="circle circle--sm">04</span><span class="practice__title">Formułuj realistyczne wymagania<span class="practice__short">Nakład pracy powinien odpowiadać punktom ECTS i rzeczywistemu czasowi wykonania zadań.</span></span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h5>
+            <div class="acc__panel" id="p-pr4" role="region" aria-labelledby="b-pr4">
+              <p class="practice__more"><strong>Realistyczne wymagania.</strong> Dopasuj zadania i pracę własną do liczby punktów ECTS. Oceń, czy wszystkie aktywności można rzeczywiście wykonać w przewidzianym czasie.</p>
+              <div class="compare" data-compare>
+                <p class="compare__q">Który zapis jest lepszy?</p>
+                <div class="compare__opts">
+                  <button class="compare__opt" type="button" data-correct="true"><span class="compare__tag compare__tag--good"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dobrze</span><span class="compare__text">Projekt zespołowy: 15 godzin, w tym analiza, opracowanie rozwiązania i prezentacja.</span></button>
+                  <button class="compare__opt" type="button" data-correct="false"><span class="compare__tag compare__tag--bad"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Źle</span><span class="compare__text">Przeczytanie 500 stron, badanie i raport: 10 godzin.</span></button>
+                </div>
+                <p class="compare__fb" aria-live="polite"></p>
+                <button class="link-btn compare__reveal" type="button">Pokaż odpowiedź</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="practice-group" data-acc-scope="praktyki">
+          <div class="practice-group__head">
+            <h4 class="practice-group__title">Aktualizuj, komunikuj i dbaj o zgodność</h4>
+            <p>Precyzyjne zasady ograniczają nieporozumienia, a aktualny sylabus odzwierciedla rzeczywistą realizację kursu. Transparentne zasady, regularna aktualizacja i zgodność dokumentu z rzeczywistą realizacją zajęć.</p>
+          </div>
+
+          <div class="acc practice">
+            <h5 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-pr5" id="b-pr5"><span class="circle circle--sm">05</span><span class="practice__title">Traktuj sylabus jak „umowę edukacyjną”<span class="practice__short">Określ wymagania, ocenianie, zaliczenie i dopuszczalny zakres wykorzystania AI.</span></span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h5>
+            <div class="acc__panel" id="p-pr5" role="region" aria-labelledby="b-pr5">
+              <p class="practice__more">Precyzyjnie określ wymagania, zasady oceniania, oczekiwania oraz reguły wykorzystania AI. Osoby studiujące powinny wiedzieć, na jakiej podstawie będą oceniane.</p>
+              <div class="compare" data-compare>
+                <p class="compare__q">Który zapis jest lepszy?</p>
+                <div class="compare__opts">
+                  <button class="compare__opt" type="button" data-correct="false"><span class="compare__tag compare__tag--bad"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Źle</span><span class="compare__text">Ocena zależy od aktywności i zaliczenia; zasady AI zostaną podane później.</span></button>
+                  <button class="compare__opt" type="button" data-correct="true"><span class="compare__tag compare__tag--good"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dobrze</span><span class="compare__text">Projekt 40%, prezentacja 20%, egzamin 40%; użycie AI należy ujawnić.</span></button>
+                </div>
+                <p class="compare__fb" aria-live="polite"></p>
+                <button class="link-btn compare__reveal" type="button">Pokaż odpowiedź</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc practice">
+            <h5 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-pr6" id="b-pr6"><span class="circle circle--sm">06</span><span class="practice__title">Aktualizuj sylabus przed każdą edycją<span class="practice__short">Sprawdź literaturę, metody, pracę własną, ocenianie, narzędzia cyfrowe i zasady AI.</span></span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h5>
+            <div class="acc__panel" id="p-pr6" role="region" aria-labelledby="b-pr6">
+              <p class="practice__more">Sprawdź aktualność literatury, metody dydaktyczne, nakład pracy, zadania, sposoby weryfikacji efektów oraz informacje o narzędziach cyfrowych i AI.</p>
+              <div class="compare" data-compare>
+                <p class="compare__q">Który zapis jest lepszy?</p>
+                <div class="compare__opts">
+                  <button class="compare__opt" type="button" data-correct="true"><span class="compare__tag compare__tag--good"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dobrze</span><span class="compare__text">Przed nową edycją zaktualizowano literaturę, projekt, nakład pracy i zasady AI.</span></button>
+                  <button class="compare__opt" type="button" data-correct="false"><span class="compare__tag compare__tag--bad"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Źle</span><span class="compare__text">Skopiowano sylabus bez weryfikacji mimo zmiany literatury, zadań i zaliczenia.</span></button>
+                </div>
+                <p class="compare__fb" aria-live="polite"></p>
+                <button class="link-btn compare__reveal" type="button">Pokaż odpowiedź</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nazwa zasady: sl. 25 „Traktuj sylabus jako narzędzie jakości”; sl. 27 „Zapewnij zgodność sylabusa z realizacją przedmiotu”. -->
+          <div class="acc practice">
+            <h5 class="acc__h"><button class="acc__btn" type="button" aria-expanded="false" aria-controls="p-pr7" id="b-pr7"><span class="circle circle--sm">07</span><span class="practice__title">Traktuj sylabus jako narzędzie jakości<span class="practice__short">Dokumentuj rzeczywisty sposób realizacji przedmiotu i jego spójność z programem.</span></span><svg class="acc__chev icon" aria-hidden="true"><use href="#i-chev"/></svg></button></h5>
+            <div class="acc__panel" id="p-pr7" role="region" aria-labelledby="b-pr7">
+              <p class="practice__more"><strong>Zapewnij zgodność sylabusa z realizacją przedmiotu.</strong> Dokument powinien odzwierciedlać program studiów, faktyczne aktywności i sposób oceniania.</p>
+              <p class="practice__more">Sylabus powinien odzwierciedlać program studiów i rzeczywisty przebieg zajęć. Stanowi punkt odniesienia w przeglądach jakości kształcenia i procesach akredytacyjnych.</p>
+              <div class="compare" data-compare>
+                <p class="compare__q">Który zapis jest lepszy?</p>
+                <div class="compare__opts">
+                  <button class="compare__opt" type="button" data-correct="false"><span class="compare__tag compare__tag--bad"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Źle</span><span class="compare__text">Sylabus wskazuje test, choć oceniany jest projekt nieopisany w dokumencie.</span></button>
+                  <button class="compare__opt" type="button" data-correct="true"><span class="compare__tag compare__tag--good"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Dobrze</span><span class="compare__text">Efekty wynikają z programu, treści je rozwijają, a zadanie pozwala je sprawdzić.</span></button>
+                </div>
+                <p class="compare__fb" aria-live="polite"></p>
+                <button class="link-btn compare__reveal" type="button">Pokaż odpowiedź</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="keyrule">
+          <p class="keyrule__label">Najważniejsza zasada</p>
+          <p class="keyrule__text">Sylabus powinien opisywać rzeczywisty, spójny i możliwy do zrealizowania proces uczenia się, a nie tylko spełniać wymagania formalne.</p>
+        </aside>
+      </div>
+
+      <!-- sl. 24 -->
+      <div class="sub" id="sylabus-kontrola">
+        <h3>Kontrola końcowa</h3>
+        <p class="lead">Zanim zatwierdzisz sylabus, sprawdź go pod kątem pięciu kryteriów.</p>
+        <div class="checklist-box">
+          <div class="checklist-box__head">
+            <p class="checklist-box__count" aria-live="polite"><span data-checklist-count="sylabus">0 / 5</span> kryteriów</p>
+            <button class="link-btn" type="button" data-checklist-reset="sylabus"><svg class="icon" aria-hidden="true"><use href="#i-reset"/></svg>Wyczyść</button>
+          </div>
+          <span class="progress"><span class="progress__fill" data-checklist-fill="sylabus"></span></span>
+          <ul class="checklist checklist--inline" data-checklist="sylabus">
+            <li><input type="checkbox" id="k1"><label for="k1">spójność</label></li>
+            <li><input type="checkbox" id="k2"><label for="k2">aktualność</label></li>
+            <li><input type="checkbox" id="k3"><label for="k3">wykonalność</label></li>
+            <li><input type="checkbox" id="k4"><label for="k4">transparentność</label></li>
+            <li><input type="checkbox" id="k5"><label for="k5">zgodność z programem</label></li>
+          </ul>
+        </div>
+      </div>
+      <div class="chapter-end" data-end="sylabus" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== 06 ZAKOŃCZENIE ===================== -->
+    <section class="chapter" id="zakonczenie" aria-labelledby="h-end" data-chapter>
+      <header class="chapter__head">
+        <span class="circle circle--lg" aria-hidden="true">06</span>
+        <div>
+          <p class="eyebrow">Uwagi końcowe</p>
+          <h2 id="h-end">Na zakończenie</h2>
+        </div>
+      </header>
+
+      <div class="sub" id="zakonczenie-zasady">
+        <h3>Najważniejsze zasady</h3>
+        <ul class="takeaways">
+          <li><blockquote><p>Nie istnieje jedna uniwersalna metoda dydaktyczna.</p></blockquote><a href="#metody-rama">Rama decyzyjna</a></li>
+          <li><blockquote><p>Skuteczne planowanie zajęć zaczyna się od efektów uczenia się — to one wyznaczają, które metody powinny pełnić rolę wiodącą.</p></blockquote><a href="#metody-efekty">Efekty uczenia się a dobór metod</a></li>
+          <li><blockquote><p>Dobrze zaprojektowane zajęcia pomagają osobom studiującym osiągać cele, rozwijać kompetencje i budować trwałą wiedzę.</p></blockquote><a href="#projektowanie-efekty">Projektowanie zajęć</a></li>
+          <li><blockquote><p>Sylabus powinien opisywać rzeczywisty, spójny i możliwy do zrealizowania proces uczenia się, a nie tylko spełniać wymagania formalne.</p></blockquote><a href="#sylabus-praktyki">Dobre praktyki — sylabus</a></li>
+        </ul>
+      </div>
+
+      <div class="sub" id="zakonczenie-kontakt">
+        <div class="thanks">
+          <div>
+            <p class="eyebrow eyebrow--light">Kontakt z CDD</p>
+            <h3 class="thanks__title">Dziękujemy za uwagę</h3>
+            <p class="thanks__authors">Patryk Gawor<br>dr Patrycja Lipińska<br>Paweł Zreda</p>
+          </div>
+          <div class="thanks__contact">
+            <p class="thanks__unit">Centrum Doskonałości Dydaktycznej</p>
+            <p><a href="mailto:cdd@kozminski.edu.pl"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>cdd@kozminski.edu.pl</a></p>
+            <p><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>A.118</p>
+          </div>
+        </div>
+        <div class="restart">
+          <a class="btn btn--ghost" href="#start">Wróć na początek</a>
+          <button class="link-btn" type="button" data-progress-reset><svg class="icon" aria-hidden="true"><use href="#i-reset"/></svg>Zacznij od nowa (wyzeruj postęp i listy)</button>
+        </div>
+      </div>
+      <div class="chapter-end" data-end="zakonczenie" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer__brand">
+        <img src="assets/logo-kozminski-white.png" alt="Akademia Leona Koźmińskiego — Kozminski University" width="600" height="261">
+        <div>
+          <p class="footer__unit">Centrum Doskonałości Dydaktycznej</p>
+          <p>Akademia Leona Koźmińskiego</p>
+          <p><a href="mailto:cdd@kozminski.edu.pl">cdd@kozminski.edu.pl</a></p>
+        </div>
+      </div>
+      <div class="footer__authors">
+        <p class="footer__label">Autorzy</p>
+        <p>Patryk Gawor<br>dr Patrycja Lipińska<br>Paweł Zreda</p>
+      </div>
+      <p class="footer__ai">Grafiki i infografiki w prezentacji opracowano z pomocą sztucznej inteligencji na podstawie scenariusza przygotowanego przez Centrum Doskonałości Dydaktycznej.</p>
+    </footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
